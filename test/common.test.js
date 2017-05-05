@@ -430,3 +430,11 @@ test('parseIndex', function (t) {
 
     t.end();
 });
+
+test('parseIndex', function (t) {
+    var splitNameParts = common.splitNameParts;
+
+    t.deepEqual(splitNameParts('foo/bar'), ['foo', 'bar']);
+
+    t.end();
+});
