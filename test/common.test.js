@@ -363,6 +363,18 @@ test('parseRepo', function (t) {
         'canonicalName': 'myreg.example.com:1234/foo/bar'
     });
 
+    // localhot/foo/bar/baz
+    t.deepEqual(parseRepo('localhost:5000/foo/bar/bazz'), {
+        'index': {
+            'name': 'localhost:5000',
+            'official': false
+        },
+        'official': false,
+        'remoteName': 'foo/bar/bazz',
+        'localName': 'localhost:5000/foo/bar/bazz',
+        'canonicalName': 'localhost:5000/foo/bar/bazz'
+    });
+
     t.end();
 });
 
@@ -435,6 +447,7 @@ test('parseIndex', function (t) {
     var splitNameParts = common.splitNameParts;
 
     t.deepEqual(splitNameParts('foo/bar'), ['foo', 'bar']);
+    t.deepEqual(splitNameParts('foo/bar/bazz'), ['foo/bar', 'bazz']);
 
     t.end();
 });
