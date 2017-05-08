@@ -1,6 +1,6 @@
 {
     "name": "docker-registry-client",
-    "version": "3.2.6-slashbug1",
+    "version": "3.2.6-masakura-1",
     "description": "node.js client for the Docker Registry API",
     "author": "Joyent (joyent.com)",
     "main": "./lib/index.js",
